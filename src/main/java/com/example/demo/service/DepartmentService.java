@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Department;
+import com.example.demo.error.DepartmentNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +11,7 @@ public interface DepartmentService {
 
     List<Department> getDepartments();
 
-    Optional<Department> fetchDepartmentById(Long departmentId);
+    Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
     void deleteDepartment(Long departmentId);
 
